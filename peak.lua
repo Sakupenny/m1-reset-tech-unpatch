@@ -32,7 +32,7 @@ local wasd = {
 	[Enum.KeyCode.D] = false,
 }
 
-local function isholdingall()
+local function allReleased()
 	for _, isHeld in pairs(wasd) do
 		if isHeld then
 			return true
@@ -49,7 +49,7 @@ UserInputService.InputBegan:Connect(function(input, typing)
 		wasd[input.KeyCode] = true
 	end
 
-	if input.KeyCode == Enum.KeyCode.Q and (wasd[Enum.KeyCode.W] or not isholdingall()) then
+	if input.KeyCode == Enum.KeyCode.Q and (wasd[Enum.KeyCode.W] or not allReleased()) then
 		local args = {
 			[1] = {
 				["Dash"] = Enum.KeyCode.W,
