@@ -115,7 +115,7 @@ local function onCharacterAdded()
     task.wait(1)
     humanoid.AnimationPlayed:Connect(function(track)
         if track.Animation.AnimationId == dashAnimations.right then
-			leftDashSound1:Play()
+	    leftDashSound1:Play()
             leftDashSound2.TimePosition = 0.37
             leftDashSound2:Play()
         elseif track.Animation.AnimationId == dashAnimations.left then
@@ -130,3 +130,7 @@ player.CharacterAdded:Connect(onCharacterAdded)
 if player.Character then
     onCharacterAdded()
 end
+
+--[[
+	Happy skidding! No idea why you would wanna skid this shit though
+]]
